@@ -54,7 +54,7 @@ function removeDotFromUnselectedElement(element) {
 
 function changeSlide(bannerP,nextSlide) {
 	bannerImgName = nextSlide.image;
-	bannerP.innerHTML = nextSlide.text;
+	bannerP.innerHTML = nextSlide.tagLine;
 }
 
 function changeImgSrc(imgSrc) {
