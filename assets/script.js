@@ -17,12 +17,32 @@ const slides = [
 	}
 ]
 
-let arrow_left = document.querySelector(".arrow_left");
-		arrow_left.addEventListener('click', function() {
+// Déclaration des variables
+
+const bulletPoint = document.getElementById("bullet_point");
+let bannerImg = document.querySelector(".banner-img");
+let bannerImgName = bannerImg.src.substring(bannerImg.src.lastIndexOf("/") + 1, bannerImg.src.length);
+
+// Boucles
+
+for (let i = 0; i < slides.length; i++) {
+	let dot = document.createElement("div");
+	dot.className = "dot";
+	bulletPoint.appendChild(dot);
+
+	if(bannerImgName === slides[i].image) {
+		dot.className += " dot_selected";
+	}
+}
+
+// Events
+
+let arrowLeft = document.querySelector(".arrow_left");
+		arrowLeft.addEventListener('click', function() {
 			console.log("Vous avez cliqué sur la fleche gauche");
 });
 
-let arrow_right = document.querySelector(".arrow_right");
-		arrow_right.addEventListener('click', function() {
+let arrowRight = document.querySelector(".arrow_right");
+		arrowRight.addEventListener('click', function() {
 			console.log("Vous avez cliqué sur la fleche droite");
 });
